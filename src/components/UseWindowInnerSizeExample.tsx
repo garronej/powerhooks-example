@@ -1,4 +1,4 @@
-import {useWindowInnerSize} from "powerhooks/useWindowInnerSize";
+import {useWindowInnerSize} from "powerhooks";
 
 //This hook triggers an event every time the window changes size.
 //It returns an object with the current window width and height as properties.

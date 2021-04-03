@@ -1,4 +1,4 @@
-import {useCallbackFactory} from "powerhooks/useCallbackFactory";
+import {useCallbackFactory} from "powerhooks";
 import {useState, memo} from "react";
 
 type Task = {

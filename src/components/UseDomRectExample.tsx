@@ -1,4 +1,4 @@
-import {useDomRect} from "powerhooks/useDomRect";
+import {useDomRect} from "powerhooks";
 
 
 

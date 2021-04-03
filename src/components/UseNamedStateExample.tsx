@@ -1,4 +1,4 @@
-import {useNamedState} from "powerhooks/useNamedState";
+import {useNamedState} from "powerhooks";
 import {useCallback} from "react";
 
 

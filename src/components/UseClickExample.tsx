@@ -1,5 +1,5 @@
-import {useClick} from "powerhooks/useClick";
-import {useState, useCallback, useRef, useEffect} from "react";
+import { useClick } from "powerhooks";
+import { useState, useCallback, useRef, useEffect } from "react";
 
 
 type Task = {
@@ -8,7 +8,7 @@ type Task = {
     isInEditingState: boolean
 }
 
-export const UseClickExample = ()=>{
+export const UseClickExample = () => {
 
 
     const [task, setTask] = useState<Task>({
@@ -21,35 +21,35 @@ export const UseClickExample = ()=>{
 
     const inputRef = useRef<HTMLInputElement>(null);
 
-    useEffect(()=>{
-        if(!task.isInEditingState) return;
-        if(!inputRef.current) return;
+    useEffect(() => {
+        if (!task.isInEditingState) return;
+        if (!inputRef.current) return;
 
         inputRef.current.select();
 
 
-    },[task.isInEditingState])
+    }, [task.isInEditingState])
 
-    
-    const clickHandler = (type: "simple" | "double")=>{
-        switch(type){
+
+    const clickHandler = (type: "simple" | "double") => {
+        switch (type) {
             case "double": task.isInEditingState = !task.isInEditingState; break;
-            case "simple": !task.isInEditingState && 
-                            (task.isSelected = !task.isSelected); 
-                            break;
+            case "simple": !task.isInEditingState &&
+                (task.isSelected = !task.isSelected);
+                break;
         }
 
-        setTask({...task});
+        setTask({ ...task });
     };
 
 
 
 
 
-    const {getOnMouseProps} = useClick({
+    const { getOnMouseProps } = useClick<void>({
         "doubleClickDelayMs": 200,
-        "callback": ({type})=>{
-            switch(type){
+        "callback": ({ type }) => {
+            switch (type) {
                 case "double": clickHandler("double"); break;
                 case "down": clickHandler("simple"); break;
             }
@@ -57,18 +57,18 @@ export const UseClickExample = ()=>{
         }
     });
 
-    const handleChange= useCallback((e: React.ChangeEvent<HTMLInputElement>)=>{
+    const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
         setTextInput(e.target.value);
-    },[])
+    }, [])
 
-    const handleSubmit = useCallback((e: React.FormEvent<HTMLFormElement>)=>{
+    const handleSubmit = useCallback((e: React.FormEvent<HTMLFormElement>) => {
 
         e.preventDefault();
 
-        if(textInput === ""){
+        if (textInput === "") {
             task.isInEditingState = false;
             setTextInput(task.description);
-            setTask({...task});
+            setTask({ ...task });
             return;
         }
 
@@ -77,17 +77,17 @@ export const UseClickExample = ()=>{
 
         task.isInEditingState = false;
 
-        setTask({...task});
+        setTask({ ...task });
 
 
 
 
-    },[task, textInput]);
+    }, [task, textInput]);
 
 
 
 
-    return(
+    return (
         <div>
             <h1>useClick example</h1>
 
@@ -96,17 +96,17 @@ export const UseClickExample = ()=>{
                 "color": task.isSelected ? "white" : "black"
             }}>
                 {
-                    task.isInEditingState ? 
-                    <form onSubmit={handleSubmit}>
-                        <input 
-                            ref={inputRef}
-                            onChange={handleChange}
-                            type="text"
-                            value={textInput}
-                            autoFocus
-                        />
-                    </form> : 
-                    <p>{task.description}</p>
+                    task.isInEditingState ?
+                        <form onSubmit={handleSubmit}>
+                            <input
+                                ref={inputRef}
+                                onChange={handleChange}
+                                type="text"
+                                value={textInput}
+                                autoFocus
+                            />
+                        </form> :
+                        <p>{task.description}</p>
                 }
             </div>
 

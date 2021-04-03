@@ -1,5 +1,5 @@
-import { memo, useEffect, useState, useCallback, useReducer} from "react";
-import {useCallbackFactory} from "powerhooks/useCallbackFactory";
+import { memo, useEffect, useState, useCallback} from "react";
+import {useCallbackFactory} from "powerhooks";
 
 export const GoodExample = ()=>{
 

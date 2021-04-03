@@ -2,19 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 //import {UseCallbackFactoryExample} from "./components/UseCallbackFactoryExample";
-import {ThemeProvider} from "./theme/ThemeProvider";
-import {App} from "./components/generalExample/App";
+import { ThemeProvider } from "./theme/ThemeProvider";
+//import { App } from "./components/generalExample/App";
+import { App } from "./components/UesScopedState";
 
 
 
 ReactDOM.render(
   <React.StrictMode>
-
-  <ThemeProvider>
-    <App/>
-  </ThemeProvider>
-
-
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

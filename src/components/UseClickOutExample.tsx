@@ -1,5 +1,5 @@
 import {useClickOut} from "../customHooks/useClickOut";
-import {useCallbackFactory} from "powerhooks/useCallbackFactory";
+import {useCallbackFactory} from "powerhooks";
 import {useRef, memo, useState} from "react";
 import {css} from "tss-react";
 import {useConstCallback} from "powerhooks";

@@ -1,4 +1,4 @@
-import {useArrayDiff} from "powerhooks/useArrayDiff";
+import {useArrayDiff} from "powerhooks";
 import {useState, useCallback} from "react";
 
 

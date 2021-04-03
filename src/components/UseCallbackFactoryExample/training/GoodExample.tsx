@@ -1,5 +1,5 @@
 import {useState, memo, useMemo} from "react";
-import {useCallbackFactory} from "powerhooks/useCallbackFactory";
+import {useCallbackFactory} from "powerhooks";
 import {createUseClassNames} from "theme/useClassNames";
 import {css, cx} from "tss-react";
 

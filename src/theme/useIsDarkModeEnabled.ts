@@ -1,4 +1,4 @@
-import {createUseGlobalState} from "powerhooks/useGlobalState";
+import {createUseGlobalState} from "powerhooks";
 
 
 

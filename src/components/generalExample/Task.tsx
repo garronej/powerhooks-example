@@ -1,9 +1,9 @@
 import {Task} from "./TodoList";
 import {memo, useEffect, useRef} from "react";
-import {useNamedState} from "powerhooks/useNamedState";
-import {useConstCallback} from "powerhooks/useConstCallback";
+import {useNamedState} from "powerhooks";
+import {useConstCallback} from "powerhooks";
 import {createUseClassNames} from "theme/useClassNames";
-import {useClick} from "powerhooks/useClick";
+import {useClick} from "powerhooks";
 import ListItem from "@material-ui/core/ListItem";
 
 
@@ -88,13 +88,7 @@ export const TaskComponent = memo((props: Props)=>{
         // eslint-disable-next-line react-hooks/exhaustive-deps
     },[isInEditingState]);
 
-
-
-
-
-    
-
-    const {getOnMouseProps} = useClick({
+    const {getOnMouseProps} = useClick<void>({
         "doubleClickDelayMs": 200,
         "callback": ({type})=>{
             switch(type){
@@ -104,7 +98,6 @@ export const TaskComponent = memo((props: Props)=>{
 
         }
     })
-    
 
     const {classNames} = useClassNames({
         "isTaskSelected": isSelected, 

@@ -1,8 +1,8 @@
 import {useMemo, useRef} from "react";
 import {createUseClassNames} from "theme/useClassNames";
-import {useConstCallback} from "powerhooks/useConstCallback";
-import {useCallbackFactory} from "powerhooks/useCallbackFactory";
-import {useNamedState} from "powerhooks/useNamedState";
+import {useConstCallback} from "powerhooks";
+import {useCallbackFactory} from "powerhooks";
+import {useNamedState} from "powerhooks";
 import {TaskComponent} from "./Task";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
